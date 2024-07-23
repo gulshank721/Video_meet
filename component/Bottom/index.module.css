@@ -1,0 +1,15 @@
+.Bottom{
+    @apply absolute flex gap-10 p-4 px-2 bottom-5 left-0 right-0 justify-center items-center mx-auto;
+    /* border: 1px solid black; */
+    width: 50%;
+
+    .icon{
+        @apply p-4 rounded-full text-white cursor-pointer;
+        background-color: theme("colors.secondary");
+
+        &:hover, 
+        &.active{
+            background-color: theme("colors.buttomPrimary");
+        }
+    }
+}

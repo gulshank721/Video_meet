@@ -1,0 +1,35 @@
+.homeContainer{
+    @apply w-1/2 mx-auto p-4 mt-6 flex flex-col items-center h-[70vh] justify-around ;
+    border: 1px solid rgb(192, 49, 49);
+    border-radius: 2px 25px;
+    background-color: beige;
+
+    h1 {
+        @apply font-mono text-slate-800 text-center text-3xl font-semibold ;
+
+    }
+
+    .enterRoom{
+        @apply mt-5 flex flex-col gap-3 ;
+
+        input{
+            @apply text-black text-center text-lg p-1 w-full rounded-md h-10 mb-4;
+            border: 0.2px dashed blueviolet
+        }
+
+        input:hover{
+            border: 0.2px dashed rgb(226, 43, 52)
+        }
+        button{
+            @apply p-2  bg-red-500 rounded-md shadow-md
+        }
+
+    }
+
+    .seperatorText{
+        @apply my-3 text-white w-full h-0.5 bg-slate-800 text-xl ;
+    }
+    .btnCreateRoom{
+        @apply p-2 bg-red-500 rounded-md shadow-md
+    }
+}
