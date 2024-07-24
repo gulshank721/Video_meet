@@ -15,7 +15,7 @@ const Room = () => {
   const socket = useSocket();
   const { peer, myId } = usePeer();
   const { stream } = useMediaStream();
-  const { roomId } = useRouter().query;
+  const  roomId = useRouter().query?.roomId;
   const {
     players,
     setPlayers,
@@ -27,8 +27,6 @@ const Room = () => {
   } = usePlayer(myId, roomId, peer);
 
   const [users, setUsers] = useState([]);
-
-  //   console.log(params);
 
   useEffect(() => {
    
