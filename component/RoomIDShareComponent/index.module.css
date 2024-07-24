@@ -1,0 +1,53 @@
+.shareContainer{
+    @apply absolute w-[400px] bottom-[100px] gap-4 p-1 border border-white rounded-md bg-gray-500/50;
+
+    div{
+        @apply p-2 mt-2 flex justify-between rounded-lg items-center bg-slate-400;
+    }
+
+    p{
+        @apply text-white font-mono font-light text-sm;
+    }
+    .copyIcon:hover{
+        @apply  scale-110 cursor-pointer     }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border: 1px solid black; */
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

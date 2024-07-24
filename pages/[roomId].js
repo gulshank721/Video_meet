@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles/room.module.css";
 import Bottom from "@/component/Bottom";
 import { cloneDeep } from "lodash";
+import ShareRoomID from "@/component/RoomIDShareComponent";
 
 const Room = () => {
   const socket = useSocket();
@@ -173,6 +174,7 @@ const Room = () => {
           leaveRoom={leaveRoom}
         />
       )}
+      <ShareRoomID/>
     </>
   );
 };
