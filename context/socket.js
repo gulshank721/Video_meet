@@ -19,20 +19,20 @@ export const SocketProvider =({children})=>{
     
         setSocket(connection);
     
-        connection.on('connect_error', async (err) => {
-          console.log("Error establishing socket", err);
-          await fetch('/api/socket'); // Adjust this endpoint as needed
-        });
+        // connection.on('connect_error', async (err) => {
+        //   console.log("Error establishing socket", err);
+        //   await fetch('/api/socket'); // Adjust this endpoint as needed
+        // });
     
         return () => {
           connection.close();
         };
       }, []);
 
-    // socket?.on('connect_error', async(err)=>{
-    //     console.log("Error extablishing socket", err)
-    //     await fetch('/api/socket')
-    // })
+    socket?.on('connect_error', async(err)=>{
+        console.log("Error extablishing socket", err)
+        await fetch('/api/socket')
+    })
 
     return <SocketContext.Provider value={socket}>
         {socket ? children : <div>Connecting...</div>}
