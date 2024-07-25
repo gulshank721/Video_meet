@@ -29,10 +29,10 @@ export const SocketProvider =({children})=>{
         };
       }, []);
 
-    socket?.on('connect_error', async(err)=>{
-        console.log("Error extablishing socket", err)
-        await fetch('/api/socket')
-    })
+    // socket?.on('connect_error', async(err)=>{
+    //     console.log("Error extablishing socket", err)
+    //     await fetch('/api/socket')
+    // })
 
     return <SocketContext.Provider value={socket}>
         {socket ? children : <div>Connecting...</div>}
