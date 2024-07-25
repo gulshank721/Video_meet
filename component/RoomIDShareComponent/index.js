@@ -6,7 +6,7 @@ import styles from "@/component/RoomIDShareComponent/index.module.css";
 const ShareRoomID = () => {
   const router = useRouter();
   const { roomId } = router.query;
-  console.log(roomId);
+  // console.log(roomId);
   const [tooltipText, setTooltipText] = useState("Copy Text");
 
   const handleCopyRoomID = () => {

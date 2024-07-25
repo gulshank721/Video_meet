@@ -12,22 +12,19 @@ export const SocketProvider =({children})=>{
     const [socket, setSocket] = useState();
 
     useEffect(() => {
-        const socket = io('https://video-meet-amber.vercel.app/api/socket', {
-          path: '/api/socket',
-        });
+        const connection = io('https://video-meet-amber.vercel.app/', {
+            path: '/api/socket',
+          });
     
-        socket.on('connect', () => {
-          console.log('connected to socket server');
-        });
+        setSocket(connection);
     
-        socket.on('connect_error', (err) => {
-          console.log('Error connecting to socket server:', err);
-        });
-    
-        setSocket(socket);
+        // connection.on('connect_error', async (err) => {
+        //   console.log("Error establishing socket", err);
+        //   await fetch('/api/socket'); // Adjust this endpoint as needed
+        // });
     
         return () => {
-          socket.disconnect();
+          connection.close();
         };
       }, []);
 
