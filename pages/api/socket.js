@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
 import { withEdge } from '@vercel/edge';
 
-const SocketHandler = withEdge((req, res) => {
+const SocketHandler = (req, res) => {
   if (res.socket.server.io) {
     console.log("Socket server is already running");
   } else {
@@ -42,6 +42,6 @@ const SocketHandler = withEdge((req, res) => {
     });
   }
   res.end();
-});
+};
 
 export default SocketHandler;
