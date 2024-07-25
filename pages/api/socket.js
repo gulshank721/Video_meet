@@ -6,14 +6,7 @@ const SocketHandler = (req, res) => {
     console.log("Socket server is already running");
   } else {
     console.log("Starting socket server...");
-    const io = new Server(res.socket.server, {
-      path: '/api/socket',
-      addTrailingSlash: false,
-      cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-      }
-    });
+    const io = new Server(res.socket.server);
     res.socket.server.io = io;
 
     io.on("connection", (socket) => {

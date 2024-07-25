@@ -12,9 +12,7 @@ export const SocketProvider =({children})=>{
     const [socket, setSocket] = useState();
 
     useEffect(() => {
-        const connection = io('https://video-meet-amber.vercel.app/', {
-            path: '/api/socket',
-          });
+        const connection = io();
     
         setSocket(connection);
     
