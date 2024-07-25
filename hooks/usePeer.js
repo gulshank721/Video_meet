@@ -7,7 +7,7 @@ export const usePeer = () => {
   const socket = useSocket();
   const [peer, setPeer] = useState(null);
   const [myId, setMyId] = useState("");
-  const { roomId } = useParams();
+  const { roomId } = router.query;
   //   console.log(roomId);
   const isPeerSet = useRef(false);
 
